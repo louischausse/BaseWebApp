@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <% include ../helpers/head %>
+</head>
+
+<body>
+  <!-- the classes 'page-header' and 'btn btn-dark' create bootstrap components.  -->
+  <!-- Check out more components here: http://getbootstrap.com/components/ -->
+  <div class="page-header">
+    <% include ../helpers/navbar %>
+  
+    <h1>Message App</h1>
+  </div>
+  <div class="container">
+
+      <button class="btn btn-primary" onClick="handleSignin()">Login</button>
+
+      <form onSubmit="handleMessageFormSubmit()" action="#" class="align-items-center">
+          <div class="col">
+            <input id="post-title" class="form-control mb-2 mr-sm-2" placeholder="Title">
+            <textarea id="post-body" class="form-control mb-2 mr-sm-2" placeholder="Message"></textarea>
+            <button class="btn btn-primary mb-2">Submit</button>
+          </div>
+      </form>
+      <div class="error-message">
+    
+        </div>
+        <div id="post-listing">
+
+        </div>
+  </div>
+  
+</body>
+
+</html>

@@ -13,12 +13,8 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.get('/about', function(request, response) {
-  response.render('pages/about');
-});
-
-app.get('/projects', function(request, response) {
-  response.render('pages/projects');
+app.get('/message', function(request, response) {
+  response.render('pages/message');
 });
 
 app.listen(app.get('port'), function() {
