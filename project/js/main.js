@@ -1,9 +1,12 @@
 // MESSAGE APP
 
+//Display posts on page load
+
 $(document).ready(function(){
   getPosts();
 })
 
+// Google Sign-in
 function handleSignin() {
   var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -25,6 +28,7 @@ function handleSignin() {
   });
 }
 
+// Save messages to the database
 function addMessage(postTitle,postBody){
   var postData = {
     title: postTitle,
@@ -46,12 +50,14 @@ function addMessage(postTitle,postBody){
   });
 }
 
+// Handle data entry from the form
 function handleMessageFormSubmit(){
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
   addMessage(postTitle,postBody);
 }
 
+// Get posts data and display it on the page
 function getPosts(){
   return firebase.database().ref("posts").once('value').then(function(snapshot) {
     var posts = snapshot.val();
